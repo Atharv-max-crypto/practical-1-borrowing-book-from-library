@@ -1,0 +1,42 @@
+def accept_array(A): 
+   n = int(input("Enter the total no. of student : "))
+   for i in range(n):
+      x = int(input("Enter the  roll no of student  :"))
+      A.append(x)
+   print("Student Info accepted successfully\n\n")
+   return n
+
+def display_array(A,n): 
+   if(n == 0) :
+      print("\nNo records in the database")
+   else :
+      print("Students  Array : ",end=' ')
+      for i in range(n) :
+         print(A[i],end=' ')
+      print("\n");
+      
+def Linear_Search(A,n,x):
+    for i in range(n):
+        if(A[i]==x):
+            return i
+    return -1
+      
+
+
+def main() :   
+  A = []
+   
+  print ("\t1 : Accept & Display Students info ")      
+  
+  n = accept_array(A)
+  display_array(A,n)
+  
+  X = int(input("Enter the roll_no to be searched : "))
+  
+  Ls = Linear_Search(A,n,X)
+  if(Ls == -1) :
+      print("\tRoll no to be Searched not Found\n")
+  else :
+      print("\tRoll no found at location %d" %(Ls + 1))
+      
+main()
